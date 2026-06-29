@@ -115,3 +115,18 @@ button:hover {
         opacity: 0;
     }
 }
+.love-heart {
+    font-size: 70px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.love-heart:hover {
+    transform: scale(1.2);
+}
+
+.love-heart:active {
+    transform: scale(0.9);
+}

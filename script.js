@@ -51,3 +51,26 @@ document.getElementById("btn").addEventListener("click", function () {
         }, 5000);
     }
 });
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", function () {
+
+    btn.innerHTML = "❤️";
+
+    for (let i = 0; i < 40; i++) {
+        let heart = document.createElement("div");
+
+        heart.innerHTML = "❤️";
+        heart.className = "heart";
+
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.animationDuration =
+            (Math.random() * 3 + 2) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+});
