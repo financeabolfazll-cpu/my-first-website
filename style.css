@@ -116,7 +116,7 @@ button:hover {
     }
 }
 .love-heart {
-    font-size: 70px;
+    font-size: clamp(90px, 25vw, 140px);
     cursor: pointer;
     user-select: none;
     transition: 0.3s;
