@@ -53,33 +53,29 @@ document.getElementById("btn").addEventListener("click", function () {
 });
 const btn = document.getElementById("btn");
 
-let isPlaying = false;
-
-btn.addEventListener("click", function () {
-
-    if (isPlaying) return;
-
-    isPlaying = true;
+btn.addEventListener("click", () => {
     btn.innerHTML = "❤️";
 
-    for (let i = 0; i < 20; i++) {
-        let heart = document.createElement("div");
+    let count = 0;
 
-        heart.innerHTML = "❤️";
+    const interval = setInterval(() => {
+        const heart = document.createElement("div");
+
         heart.className = "heart";
+        heart.innerHTML = "❤️";
 
-        heart.style.left = Math.random() * window.innerWidth + "px";
-        heart.style.animationDuration =
-            (Math.random() * 2 + 3) + "s";
+        heart.style.left = Math.random() * 100 + "vw";
 
         document.body.appendChild(heart);
 
         setTimeout(() => {
             heart.remove();
-        }, 4000);
-    }
+        }, 3000);
 
-    setTimeout(() => {
-        isPlaying = false;
-    }, 1500);
+        count++;
+
+        if (count >= 15) {
+            clearInterval(interval);
+        }
+    }, 150);
 });
