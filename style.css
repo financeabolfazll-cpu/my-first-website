@@ -124,3 +124,15 @@ button:hover {
         opacity: 0;
     }
 }
+#days {
+    white-space: nowrap;
+    direction: rtl;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.8;
+}
+.love-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffd6e0;
+}

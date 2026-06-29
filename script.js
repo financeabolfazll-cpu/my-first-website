@@ -25,7 +25,8 @@ function updateTimer() {
     );
 
 document.getElementById("days").innerHTML =
-`${days} روز ${hours} ساعت ${minutes} دقیقه ${seconds} ثانیه ❤️ قلبم شدییییی ❤️`;
+`${days} روز ${hours} ساعت ${minutes} دقیقه ${seconds} ثانیه<br>
+<span class="love-text">❤️ قلبم شدییییی ❤️</span>`;
 }
 
 updateTimer();
