@@ -89,19 +89,28 @@ button:hover {
     color: #ffd6e0;
     font-weight: bold;
 }
-#days {
-    direction: rtl;
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
+.love-heart {
+    font-size: 130px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    border: none;
+    background: transparent;
+    transition: transform 0.2s;
+}
+
+.love-heart:active {
+    transform: scale(0.9);
 }
 
 .heart {
     position: fixed;
-    bottom: -20px;
-    font-size: 30px;
+    bottom: -30px;
+    font-size: 40px;
     pointer-events: none;
-    animation: fly 5s linear forwards;
+    animation: fly 3s linear forwards;
 }
 
 @keyframes fly {
@@ -114,19 +123,4 @@ button:hover {
         transform: translateY(-100vh);
         opacity: 0;
     }
-}
-.love-heart {
-    font-size: clamp(90px, 25vw, 140px);
-    cursor: pointer;
-    user-select: none;
-    transition: 0.3s;
-    margin-top: 20px;
-}
-
-.love-heart:hover {
-    transform: scale(1.2);
-}
-
-.love-heart:active {
-    transform: scale(0.9);
 }

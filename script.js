@@ -31,51 +31,39 @@ document.getElementById("days").innerHTML =
 updateTimer();
 setInterval(updateTimer, 1000);
 
-document.getElementById("btn").addEventListener("click", function () {
-
-    for (let i = 0; i < 40; i++) {
-
-        let heart = document.createElement("div");
-
-        heart.innerHTML = "❤️";
-        heart.className = "heart";
-
-        heart.style.left = Math.random() * window.innerWidth + "px";
-        heart.style.animationDuration =
-            (Math.random() * 3 + 2) + "s";
-
-        document.body.appendChild(heart);
-
-        setTimeout(() => {
-            heart.remove();
-        }, 5000);
-    }
-});
 const btn = document.getElementById("btn");
 
+let busy = false;
+
 btn.addEventListener("click", () => {
+
+    if (busy) return;
+
+    busy = true;
+
     btn.innerHTML = "❤️";
 
-    let count = 0;
+    for (let i = 0; i < 25; i++) {
 
-    const interval = setInterval(() => {
         const heart = document.createElement("div");
 
         heart.className = "heart";
         heart.innerHTML = "❤️";
 
-        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.left =
+            Math.random() * window.innerWidth + "px";
+
+        heart.style.animationDuration =
+            (Math.random() * 2 + 2) + "s";
 
         document.body.appendChild(heart);
 
         setTimeout(() => {
             heart.remove();
-        }, 3000);
+        }, 3500);
+    }
 
-        count++;
-
-        if (count >= 15) {
-            clearInterval(interval);
-        }
-    }, 150);
+    setTimeout(() => {
+        busy = false;
+    }, 1000);
 });
