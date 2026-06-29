@@ -53,11 +53,16 @@ document.getElementById("btn").addEventListener("click", function () {
 });
 const btn = document.getElementById("btn");
 
+let isPlaying = false;
+
 btn.addEventListener("click", function () {
 
+    if (isPlaying) return;
+
+    isPlaying = true;
     btn.innerHTML = "❤️";
 
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 20; i++) {
         let heart = document.createElement("div");
 
         heart.innerHTML = "❤️";
@@ -65,12 +70,16 @@ btn.addEventListener("click", function () {
 
         heart.style.left = Math.random() * window.innerWidth + "px";
         heart.style.animationDuration =
-            (Math.random() * 3 + 2) + "s";
+            (Math.random() * 2 + 3) + "s";
 
         document.body.appendChild(heart);
 
         setTimeout(() => {
             heart.remove();
-        }, 5000);
+        }, 4000);
     }
+
+    setTimeout(() => {
+        isPlaying = false;
+    }, 1500);
 });
